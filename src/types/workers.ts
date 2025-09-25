@@ -4,4 +4,5 @@ export interface WorkerType {
   service: string
   pricePerDay: number
   image: string
+  fallbackImage?: string
 }

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://workhub-assignment.vercel.app"),
+  metadataBase: new URL("https://frontend-dev-assignment-liard.vercel.app/"),
   alternates: {
     canonical: "/",
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "WorkHub - Find Skilled Workers",
     description:
       "Discover and hire skilled workers for all your needs. From construction to home services, find the right professional for your project.",
-    url: "https://workhub-assignment.vercel.app",
+    url: "https://frontend-dev-assignment-liard.vercel.app/",
     siteName: "WorkHub",
     images: [
       {
@@ -86,27 +86,25 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "WorkHub",
-    "url": "https://workhub-assignment.vercel.app",
-    "description": "Discover and hire skilled workers for all your needs. From construction to home services, find the right professional for your project.",
-    "logo": "https://workhub-assignment.vercel.app/logo.png",
-    "sameAs": [
-      "https://twitter.com/workhub",
-      "https://facebook.com/workhub"
-    ],
-    "contactPoint": {
+    name: "WorkHub",
+    url: "https://workhub-assignment.vercel.app",
+    description:
+      "Discover and hire skilled workers for all your needs. From construction to home services, find the right professional for your project.",
+    logo: "https://workhub-assignment.vercel.app/logo.png",
+    sameAs: ["https://twitter.com/workhub", "https://facebook.com/workhub"],
+    contactPoint: {
       "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
-      "contactType": "customer service"
+      telephone: "+1-555-123-4567",
+      contactType: "customer service",
     },
-    "serviceType": [
+    serviceType: [
       "Construction Workers",
       "Home Services",
       "Carpenters",
       "Welders",
       "Electricians",
-      "Plumbers"
-    ]
+      "Plumbers",
+    ],
   };
 
   return (
@@ -140,7 +138,9 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Navbar />
-        <main id="main-content" className="pt-16 flex-1">{children}</main>
+        <main id="main-content" className="pt-16 flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
