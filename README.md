@@ -56,29 +56,29 @@ _Modern, responsive design with professional styling_
 
 ## 🏗 **Architecture Decisions**
 
-### **Why No State Management Library (Zustand/Redux)?**
+### **State Management with Zustand**
 
-For this specific use case, we chose **NOT** to implement external state management libraries like Zustand or Redux for the following reasons:
+We implemented **Zustand** for state management to provide a clean, scalable solution for the following reasons:
 
-1. **Simplicity**: The application has a relatively simple state structure that doesn't require complex state management patterns
-2. **Performance**: React's built-in `useState` and `useReducer` are sufficient and more performant for this scale
-3. **Bundle Size**: Avoiding additional dependencies keeps the bundle size smaller
-4. **Learning Focus**: Demonstrates core React patterns and hooks effectively
-5. **Built-in Solutions**: Next.js provides excellent caching and state management out-of-the-box
+1. **Centralized State**: Single source of truth for workers data, filters, and loading states
+2. **Performance**: Lightweight store with minimal re-renders and excellent performance
+3. **Developer Experience**: Simple, intuitive API with TypeScript support
+4. **Scalability**: Easy to extend with additional state slices as the app grows
+5. **API Integration**: Centralized data fetching with proper error handling
 
-**When we WOULD use Zustand/Redux:**
+**Why Zustand over Redux:**
 
-- Complex global state with multiple components
-- Real-time data synchronization
-- Offline functionality requirements
-- Large-scale applications with many stateful components
+- **Simplicity**: Much simpler setup and less boilerplate code
+- **Bundle Size**: Smaller footprint than Redux (with DevTools)
+- **TypeScript**: Excellent TypeScript support out of the box
+- **Performance**: Minimal re-renders with selective subscriptions
 
-### **State Management Approach Used:**
+### **State Management Architecture:**
 
-- **Local State**: `useState` for component-specific state
-- **Server State**: React Query pattern with `useEffect` + `fetch`
-- **Memoization**: `useMemo` for expensive computations
-- **Context API**: Could be added later if needed for theming or user preferences
+- **Global State**: Zustand store for workers data, filters, and API state
+- **Server State**: Centralized API calls with error handling and caching
+- **Local State**: `useState` for UI-specific state (pagination, form inputs)
+- **Memoization**: `useMemo` for expensive computations and derived state
 
 ## 🛠 **Tech Stack**
 
@@ -86,7 +86,7 @@ For this specific use case, we chose **NOT** to implement external state managem
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
-- **State Management**: React Hooks (useState, useEffect, useMemo)
+- **State Management**: Zustand + React Hooks (useState, useEffect, useMemo)
 - **API**: RESTful API with Next.js API Routes
 
 ## 🚀 **Getting Started**
